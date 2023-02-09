@@ -42,6 +42,25 @@ dmserver.exe D:\dmdbms\data\DAMENG\dm.ini
 
 #### 安装准备
 
+##### 新建 dmdba 用户
+创建用户所在的组，命令如下：
+```shell
+groupadd dinstall
+```
+创建用户，命令如下：
+```shell
+useradd -g dinstall -m -d /home/dmdba -s /bin/bash dmdba
+```
+修改用户密码，命令如下：
+```shell
+passwd dmdba
+```
+
+##### 修改文件打开最大数
+可使用 dmdba 用户执行如下命令，使设置临时生效：
+```shell
+ulimit -n 65536
+```
 
 #### 数据库安装
 
