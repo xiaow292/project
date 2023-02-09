@@ -62,6 +62,22 @@ passwd dmdba
 ulimit -n 65536
 ```
 
+##### 挂载镜像
+切换到 root 用户，将 DM 数据库的 iso 安装包保存在任意位置，例如 /opt 目录下，执行如下命令挂载镜像：
+```shell
+mount -o loop /opt/dm8_setup_rh7_64_ent_8.1.1.45_20191121.iso /mnt
+```
+##### 创建安装目录
+
+创建安装目录用于安装 DM 数据库。使用 root 用户建立文件夹，待 dmdba 用户建立完成后需将文件所有者更改为 dmdba 用户，否则无法安装到该目录下。
+```shell
+mkdir /dm8
+```
+修改安装目录权限，将新建的安装路径目录权限的用户修改为 dmdba，用户组修改为 dinstall。并给安装路径下的文件设置 755 权限。
+```shell
+chown dmdba:dinstall -R /dm8/
+chmod -R 755 /dm8
+```
 #### 数据库安装
 
 
