@@ -48,7 +48,7 @@ cd /mnt/
 <img width="526" alt="image" src="https://user-images.githubusercontent.com/73985884/217770749-1a668e85-cd69-449b-99d6-d8fefb8c94cf.png"> <br>
 3、选取安全版对应版本的 Key 文件，安装程序将自动验证 Key 文件合法性，点击【下一步】继续安装；<br>
 <img width="523" alt="image" src="https://user-images.githubusercontent.com/73985884/217978881-adf15d51-3703-4d29-b324-8e0d18ff8381.png"> <br>
-4、选择安装组件，选择【典型安装】默认组件全选；<br>
+4、选择安装组件，选择【典型安装】默认组件服务器、客户端、驱动、用户手册和数据库服务全选；<br>
 <img width="526" alt="image" src="https://user-images.githubusercontent.com/73985884/217979073-4d68b6bf-7569-4f2a-929b-0f36ffa20fe8.png"> <br>
 5、选择安装目录：DM 默认安装在 /home/dmdba/dmdbms 目录下。<br>
 <img width="450" alt="image" src="https://user-images.githubusercontent.com/73985884/217979212-45f0d69b-bade-4427-aecd-9579fe9d3718.png"> <br>
