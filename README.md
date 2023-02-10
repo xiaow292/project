@@ -65,6 +65,11 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/dmdba/dmdbms/bin"
 export DM_HOME="/home/dmdba/dmdbms"
 ```
 
+执行如下命令使文件生效：
+```shell
+source ~/.bash_profile
+```
+
 #### 实例配置
 dmdba用户进入DM 数据库安装目录下的 bin 目录中，使用 dminit 命令初始化实例。dminit 命令可设置多种参数，可执行如下命令查看可配置参数。
 ```shell
