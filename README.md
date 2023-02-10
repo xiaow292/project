@@ -173,4 +173,3 @@ cd /home/dmdba/dmdbms/tool
 ./dmserver.sh
 ```
 
-## 使用
