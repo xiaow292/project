@@ -80,7 +80,7 @@ cd /home/dmdba/dmdbms/bin
 **注意：页大小 (page_size)、簇大小 (extent_size)、大小写敏感 (case_sensitive)、字符集 (charset) 这四个参数，一旦确定无法修改。** <br>
 **由于测试用例需要，数据库的页的大小需要设为32k。** <br>
 ```shell
-./dminit path=/dm/data PAGE_SIZE=32
+./dminit path=/home/dmdba/dmdbms/data PAGE_SIZE=32
 ```
 
 也可以使用图形化工具配置实例。使用图形化界面安装数据库安装完成后，会弹出选择是否初始化数据库页面，选择【初始化】。<br>
@@ -94,24 +94,31 @@ cd /home/dmdba/dmdbms/tool
 ```
 
 2、选择创建数据库实例，点击【开始】，进入创建数据库页面的创建数据库模版页签，选择【一般用途】；<br>
-<img width="544" alt="image" src="https://user-images.githubusercontent.com/73985884/217982636-24b25f00-3352-4182-8c19-f19347c5a057.png"> <br>
+<img width="364" alt="image" src="https://user-images.githubusercontent.com/73985884/217992716-ceb31bbd-eb77-4a74-b4eb-8c3369b6a28d.png"> <br>
 3、点击【下一步】，选择数据库实例安装目录为/home/dmdba/dmdbms/data <br>
+<img width="367" alt="image" src="https://user-images.githubusercontent.com/73985884/217992755-a2bbc690-379e-45a2-858c-11819a3dd6b0.png"> <br>
 4、确定好数据库安装目录后，点击【下一步】，输入数据库名、实例名和端口号；<br>
-<img width="548" alt="image" src="https://user-images.githubusercontent.com/73985884/217982916-5c412bb0-8b62-478b-8e2b-7eae979275e0.png"> <br>
+<img width="364" alt="image" src="https://user-images.githubusercontent.com/73985884/217992872-4f1d62eb-e7c8-4d93-99b4-25aa3f64f001.png"> <br>
 5、配置数据库文件路径，选择【默认路径】；<br>
+<img width="384" alt="image" src="https://user-images.githubusercontent.com/73985884/217992956-b27f9b3d-51fd-4451-825b-dd4dbe0a603f.png"> <br>
 6、点击【下一步】，配置初始化参数，注意簇大小、页大小、字符集以及大小写敏感确定后不可修改，将页大小设为32；<br>
-<img width="544" alt="image" src="https://user-images.githubusercontent.com/73985884/217983665-c9f671f2-b0d5-40de-a1cc-11e1fb2ddf5f.png"> <br>
+<img width="386" alt="image" src="https://user-images.githubusercontent.com/73985884/217994068-c4b019b3-1790-4301-a152-c0a339218019.png"> <br>
 7、点击【下一步】，配置数据库口令：可设置登陆口令，默认口令与登录名一致；<br>
-<img width="586" alt="image" src="https://user-images.githubusercontent.com/73985884/217984553-5afc727f-bf61-4730-9bf2-02c8fb9bfb6b.png"> <br>
+<img width="501" alt="image" src="https://user-images.githubusercontent.com/73985884/217994136-7861a556-69fe-4797-b68f-8c9fefa8768b.png"> <br>
 8、点击【下一步】，配置示例库：可以选择是否勾选创建示例库 BOOKSHOP 或 DMHR；<br>
+<img width="501" alt="image" src="https://user-images.githubusercontent.com/73985884/217994175-8b908978-c504-424b-9a32-3181e63fdac2.png"> <br>
 9、点击【下一步】，用户可检查创建参数，若有需要修改之处可点击【上一步】回到需要修改的位置进行修改；<br>
-10、点击【完成】，创建完成数据库实例后，重新打开一个终端，切换到 root 用户执行下图的脚本即可完成实例配置。<br>
-<img width="379" alt="image" src="https://user-images.githubusercontent.com/73985884/217983935-84c7e870-2f84-42a5-9878-5fbc916b1586.png"> <br>
+<img width="472" alt="image" src="https://user-images.githubusercontent.com/73985884/217994256-33c415ae-fbe3-4cbb-87d2-230cd9a4fe7a.png"> <br>
+10、点击【完成】，创建完成数据库实例后，重新打开一个终端，切换到 root 用户执行下图的脚本即可完成实例配置；<br>
+<img width="255" alt="image" src="https://user-images.githubusercontent.com/73985884/217994306-2b182cd8-519f-497c-abf1-0f923311ae5c.png"> <br>
+<img width="254" alt="image" src="https://user-images.githubusercontent.com/73985884/217994497-16c76e89-1823-4ba2-93fe-35afb20aa410.png"> <br>
+11、弹出提示框表示数据库创建成功。<br>
+<img width="300" alt="image" src="https://user-images.githubusercontent.com/73985884/217994847-df532d46-7d73-42df-bb8e-490326c35359.png"> <br>
 
 #### 注册服务
 命令行注册服务:注册服务需使用 root 用户进行注册。使用 root 用户进入数据库安装目录的 /script/root 下进行注册：
 ```shell
-cd /dm8/script/root
+cd /home/dmdba/dmdbms/script/root
 ./dm_service_installer.sh -t dmserver -dm_ini /home/dmdba/dmdbms/data/DAMENG/dm.ini -p DMSERVER
 ```
 
@@ -126,11 +133,13 @@ cd /home/dmdba/dmdbms/tool
 ./dbca.sh
 ```
 1、打开运行 dbca 工具，选择【注册数据库服务】；<br>
-<img width="395" alt="image" src="https://user-images.githubusercontent.com/73985884/217985005-d68723f5-ae2e-43eb-9085-da0a970801e8.png"> <br>
+<img width="264" alt="image" src="https://user-images.githubusercontent.com/73985884/217995081-4ecde79f-b00e-4041-a5ea-9aa3572c6fdc.png"> <br>
 2、单击【开始】，弹出注册数据库服务页面；<br>
-<img width="585" alt="image" src="https://user-images.githubusercontent.com/73985884/217985062-f2619f27-ef11-40c3-9af2-688d73d91592.png"> <br>
+<img width="584" alt="image" src="https://user-images.githubusercontent.com/73985884/217995799-036c3dcb-fdaf-481e-aea5-4b1696882ac7.png"> <br>
 3、点击【完成】后，弹出执行配置脚本页面，重新打开一个终端，切换到 root 用户执行执行脚本。脚本执行成功后，该实例已启动。<br>
-<img width="384" alt="image" src="https://user-images.githubusercontent.com/73985884/217985228-6f3dba2c-f533-444d-b3c3-9fff407ced2a.png"> <br>
+<img width="256" alt="image" src="https://user-images.githubusercontent.com/73985884/217996400-5b77d085-4155-4ee2-a2ed-f0e89c14d5b5.png"> <br>
+4、注册完成，点击【完成】完成服务注册。<br>
+<img width="300" alt="image" src="https://user-images.githubusercontent.com/73985884/217996551-74608ba5-4910-485f-8298-5c1e0dbf6fe9.png"> <br>
 
 #### 启停数据库
 服务注册成功后，root用户启动数据库：
