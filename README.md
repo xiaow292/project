@@ -150,7 +150,7 @@ systemctl status DmServiceDMSERVER.service
 
 可前台启动，dmdba用户进入 DM 安装目录下的 bin 目录下然后执行下面的命令启动数据库,该启动方式为前台启动，若想关闭数据库，则输入 exit 即可。
 ```shell
-./dmserver /dm/data/DAMENG/dm.ini
+./dmserver /home/dmdba/dmdbms/data/DAMENG/dm.ini
 ```
 
 图形化启动数据库，root用户进入 DM 安装目录下的 tool 目录下然后打开DM 服务查看器，选择对应的服务，右键可选择【启动】或【停止】服务。
