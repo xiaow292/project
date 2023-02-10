@@ -38,9 +38,9 @@ cd /mnt/
 ./DMInstall.bin
 ```
 
-若出现：初始化图形界面失败，如果当前监视器窗口不支持图形界面，请进入安装文件所在文件夹并使用"./DMInstall.bin -i"进行命令行安装。错误提示，可按以下两种方式操作解决：
-方法一：注销当前用户，登陆 dmdba 用户，执行 ./DMInstall.bin 命令。
-方法二：用当前用户执行 xhost +，切换到 dmdba 用户，执行 export DISPLAY=:0，再执行 xhost +命令。
+若出现“初始化图形界面失败，如果当前监视器窗口不支持图形界面，请进入安装文件所在文件夹并使用"./DMInstall.bin -i"进行命令行安装”错误提示，可按以下两种方式操作解决：<br>
+方法一：注销当前用户，登陆 dmdba 用户，执行 ./DMInstall.bin 命令。<br>
+方法二：用当前用户执行 xhost +，切换到 dmdba 用户，执行 export DISPLAY=:0，再执行 xhost +命令。<br>
 
 1、弹出图形化安装界面后，请根据系统配置选择相应语言与时区，点击【确定】按钮继续安装；<br>
 <img width="374" alt="image" src="https://user-images.githubusercontent.com/73985884/217770636-64b5d452-643a-41a4-9188-71a0c00a8ad0.png"> <br>
@@ -88,19 +88,19 @@ cd /home/dmdba/dmdbms/tool
 ./dbca.sh
 ```
 
-2、选择创建数据库实例，点击【开始】，进入创建数据库页面的创建数据库模版页签，选择【一般用途】；
+2、选择创建数据库实例，点击【开始】，进入创建数据库页面的创建数据库模版页签，选择【一般用途】；<br>
 <img width="544" alt="image" src="https://user-images.githubusercontent.com/73985884/217982636-24b25f00-3352-4182-8c19-f19347c5a057.png"> <br>
 3、点击【下一步】，选择数据库实例安装目录为/home/dmdba/dmdbms/data <br>
-4、确定好数据库安装目录后，点击【下一步】，输入数据库名、实例名和端口号；
+4、确定好数据库安装目录后，点击【下一步】，输入数据库名、实例名和端口号；<br>
 <img width="548" alt="image" src="https://user-images.githubusercontent.com/73985884/217982916-5c412bb0-8b62-478b-8e2b-7eae979275e0.png"> <br>
 5、配置数据库文件路径，选择【默认路径】；<br>
-6、点击【下一步】，配置初始化参数，注意簇大小、页大小、字符集以及大小写敏感确定后不可修改，将页大小设为32；
+6、点击【下一步】，配置初始化参数，注意簇大小、页大小、字符集以及大小写敏感确定后不可修改，将页大小设为32；<br>
 <img width="544" alt="image" src="https://user-images.githubusercontent.com/73985884/217983665-c9f671f2-b0d5-40de-a1cc-11e1fb2ddf5f.png"> <br>
-7、点击【下一步】，配置数据库口令：可设置登陆口令，默认口令与登录名一致；
+7、点击【下一步】，配置数据库口令：可设置登陆口令，默认口令与登录名一致；<br>
 <img width="586" alt="image" src="https://user-images.githubusercontent.com/73985884/217984553-5afc727f-bf61-4730-9bf2-02c8fb9bfb6b.png"> <br>
 8、点击【下一步】，配置示例库：可以选择是否勾选创建示例库 BOOKSHOP 或 DMHR；<br>
 9、点击【下一步】，用户可检查创建参数，若有需要修改之处可点击【上一步】回到需要修改的位置进行修改；<br>
-10、点击【完成】，创建完成数据库实例后，重新打开一个终端，切换到 root 用户执行下图的脚本即可完成实例配置。
+10、点击【完成】，创建完成数据库实例后，重新打开一个终端，切换到 root 用户执行下图的脚本即可完成实例配置。<br>
 <img width="379" alt="image" src="https://user-images.githubusercontent.com/73985884/217983935-84c7e870-2f84-42a5-9878-5fbc916b1586.png"> <br>
 
 #### 注册服务
@@ -120,11 +120,11 @@ cd /dm8/script/root
 cd /home/dmdba/dmdbms/tool
 ./dbca.sh
 ```
-1、打开运行 dbca 工具，选择【注册数据库服务】；
+1、打开运行 dbca 工具，选择【注册数据库服务】；<br>
 <img width="395" alt="image" src="https://user-images.githubusercontent.com/73985884/217985005-d68723f5-ae2e-43eb-9085-da0a970801e8.png"> <br>
-2、单击【开始】，弹出注册数据库服务页面；
+2、单击【开始】，弹出注册数据库服务页面；<br>
 <img width="585" alt="image" src="https://user-images.githubusercontent.com/73985884/217985062-f2619f27-ef11-40c3-9af2-688d73d91592.png"> <br>
-3、点击【完成】后，弹出执行配置脚本页面，重新打开一个终端，切换到 root 用户执行执行脚本。脚本执行成功后，该实例已启动。
+3、点击【完成】后，弹出执行配置脚本页面，重新打开一个终端，切换到 root 用户执行执行脚本。脚本执行成功后，该实例已启动。<br>
 <img width="384" alt="image" src="https://user-images.githubusercontent.com/73985884/217985228-6f3dba2c-f533-444d-b3c3-9fff407ced2a.png"> <br>
 
 #### 启停数据库
