@@ -1,26 +1,5 @@
 ## 达梦安装
 
-#### 实例配置
-
-1、数据库安装后会弹出达梦数据库配置助手，选择【创建数据库实例】，点击【开始】进入下一步骤;<br>
-2、创建数据库模板：有【一般用途】、【联机分析处理】、和【联机事务处理】三种模板供选择；<br>
-3、选择数据库目录：如 D:\dmdbs\data<br>
-4、输入数据库标识：输入数据库名称、实例名、端口号等参数；<br>
-5、数据库文件所在位置：可通过选择或输入确定数据库控制、数据库日志等文件的所在位置；<br>
-6、数据库初始化参数：可以配置数据库的初始化参数；<br>
-7、口令管理：可设置登陆口令，默认口令与登录名一致；<br>
-8、选择创建示例库：可以选择是否勾选创建示例库 BOOKSHOP 或 DMHR；<br>
-9、创建数据库摘要：在安装数据库之前，将显示用户通过数据库配置工具设置的相关参数。点击【完成】进行数据库实例的初始化工作。<br>
-
-#### 数据库启动和停止
-
-* 数据库可以通过DM服务查看器进行启动和停止。在开始菜单中的【达梦数据库】是快捷方式，打开目录下的DM服务查看器，可以看到已创建的实例服务。选择对应的服务，右键可选择【启动】或【停止】服务。<br>
-* 以命令行的方式启停服务。启动数据库服务后，敲入exit停止数据库服务。
-```shell
-cd D:\dmdbms\bin
-dmserver.exe D:\dmdbms\data\DAMENG\dm.ini
-```
-
 ### Linux安装
 
 #### 安装准备
@@ -149,8 +128,35 @@ cd /home/dmdba/dmdbms/tool
 <img width="384" alt="image" src="https://user-images.githubusercontent.com/73985884/217985228-6f3dba2c-f533-444d-b3c3-9fff407ced2a.png"> <br>
 
 #### 启停数据库
+服务注册成功后，root用户启动数据库：
+```shell
+systemctl start DmServiceDMSERVER.service
+```
 
+停止数据库：
+```shell
+systemctl stop DmServiceDMSERVER.service
+```
 
+重启数据库：
+```shell
+systemctl restart DmServiceDMSERVER.service
+```
 
+查看数据库服务状态：
+```shell
+systemctl status DmServiceDMSERVER.service
+```
+
+可前台启动，dmdba用户进入 DM 安装目录下的 bin 目录下然后执行下面的命令启动数据库,该启动方式为前台启动，若想关闭数据库，则输入 exit 即可。
+```shell
+./dmserver /dm/data/DAMENG/dm.ini
+```
+
+图形化启动数据库，root用户进入 DM 安装目录下的 tool 目录下然后打开DM 服务查看器，选择对应的服务，右键可选择【启动】或【停止】服务。
+```shell
+cd /home/dmdba/dmdbms/tool
+./dmserver.sh
+```
 
 ## 使用
