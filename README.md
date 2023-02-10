@@ -67,17 +67,7 @@ ulimit -n 65536
 ```shell
 mount -o loop /opt/dm8_setup_rh7_64_ent_8.1.1.45_20191121.iso /mnt
 ```
-##### 创建安装目录
 
-创建安装目录用于安装 DM 数据库。使用 root 用户建立文件夹，待 dmdba 用户建立完成后需将文件所有者更改为 dmdba 用户，否则无法安装到该目录下。
-```shell
-mkdir /dm8
-```
-修改安装目录权限，将新建的安装路径目录权限的用户修改为 dmdba，用户组修改为 dinstall。并给安装路径下的文件设置 755 权限。
-```shell
-chown dmdba:dinstall -R /dm8/
-chmod -R 755 /dm8
-```
 #### 数据库安装
 
 切换至 dmdba 用户下，在 /mnt 目录下使用命令行安装数据库程序，依次执行以下命令安装 DM 数据库。
@@ -95,11 +85,16 @@ cd /mnt/
 2、安装向导中点击【下一步】按钮继续安装，用户需阅读并接受许可证协议才能进入【下一步】；<br>
 <img width="526" alt="image" src="https://user-images.githubusercontent.com/73985884/217770749-1a668e85-cd69-449b-99d6-d8fefb8c94cf.png"> <br>
 3、选取对应版本的 Key 文件，安装程序将自动验证 Key 文件合法性，点击【下一步】继续安装，如果没有key文件则直接进行【下一步】；<br>
-
-4、选择安装组件：DM 安装程序提供四种安装方式：“典型安装”、“服务器安装”、“客户端安装”和“自定义安装”，此处建议选择【典型安装】；<br>
-5、选择安装目录：DM 默认安装在 C:\dmdbms 目录下，可改为其他任意盘符，如D:dmdbms<br>
-6、安装小结：显示用户即将进行的数据库安装信息，例如产品名称、版本信息、安装类型、安装目录、可用空间、可用内存等信息，用户检查无误后点击【安装】按钮进行 DM 数据库的安装。<br>
-点击【安装】后，等待 1~2 分钟即可安装完成，安装完成后弹出执行配置脚本页面，需要按照页面要求，重新打开一个终端，切换到 root 用户执行该脚本即可。
+<img width="523" alt="image" src="https://user-images.githubusercontent.com/73985884/217978881-adf15d51-3703-4d29-b324-8e0d18ff8381.png"> <br>
+4、选择安装组件，选择【典型安装】默认组件全选；<br>
+<img width="526" alt="image" src="https://user-images.githubusercontent.com/73985884/217979073-4d68b6bf-7569-4f2a-929b-0f36ffa20fe8.png"> <br>
+5、选择安装目录：DM 默认安装在 /home/dmdba/dmdbms 目录下。<br>
+<img width="450" alt="image" src="https://user-images.githubusercontent.com/73985884/217979212-45f0d69b-bade-4427-aecd-9579fe9d3718.png"> <br>
+6、点击【下一步】后，弹出确认安装信息页面，检查安装信息是否准确，确认无误后点击【安装】。<br>
+<img width="523" alt="image" src="https://user-images.githubusercontent.com/73985884/217979326-d6fabd18-59d7-42e0-b505-17ff6ce5843d.png"> <br>
+7、点击【安装】后，等待 1~2 分钟即可安装完成，安装完成后弹出执行配置脚本页面，需要按照页面要求，重新打开一个终端，切换到 root 用户执行该脚本。 <br>
+<img width="380" alt="image" src="https://user-images.githubusercontent.com/73985884/217979390-ee65e789-f363-4aaf-8a73-0c5b9d3dd4f6.png">
+脚本执行完成后，点击执行配置脚本页面中的【完成】，弹出提示框，提示是否关闭窗口，选择是，提示数据库安装完成，再点击【完成】按钮，完成数据库安装。
 
 #### 实例配置
 
