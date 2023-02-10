@@ -99,9 +99,9 @@ cd /home/dmdba/dmdbms/bin
 ./dminit path=/dm/data PAGE_SIZE=32
 ```
 
-也可以使用图形化工具配置实例。使用图形化界面安装数据库安装完成后，会弹出选择是否初始化数据库页面，选择【初始化】。
+也可以使用图形化工具配置实例。使用图形化界面安装数据库安装完成后，会弹出选择是否初始化数据库页面，选择【初始化】。<br>
 <img width="394" alt="image" src="https://user-images.githubusercontent.com/73985884/217982235-fd733811-0c6c-4880-a9c7-c8057c2181cf.png"> <br>
-1、点击初始化后会弹出数据库配置助手，通过数据库配置助手便可以配置数据库；
+1、点击初始化后会弹出数据库配置助手，通过数据库配置助手便可以配置数据库；<br>
 <img width="396" alt="image" src="https://user-images.githubusercontent.com/73985884/217982296-89c09dce-432c-4afa-b11a-7c6228463053.png"> <br>
 手动打开数据库配置助手需进入DM 数据库安装目录下的 tool 目录中，执行如下命令打开。
 ```shell
@@ -113,12 +113,40 @@ cd /home/dmdba/dmdbms/tool
 <img width="544" alt="image" src="https://user-images.githubusercontent.com/73985884/217982636-24b25f00-3352-4182-8c19-f19347c5a057.png"> <br>
 3、点击【下一步】，选择数据库实例安装目录为/home/dmdba/dmdbms/data <br>
 4、确定好数据库安装目录后，点击【下一步】，输入数据库名、实例名和端口号；
-<img width="548" alt="image" src="https://user-images.githubusercontent.com/73985884/217982916-5c412bb0-8b62-478b-8e2b-7eae979275e0.png">
-5、配置数据库文件路径，选择【默认路径】；
-6、
+<img width="548" alt="image" src="https://user-images.githubusercontent.com/73985884/217982916-5c412bb0-8b62-478b-8e2b-7eae979275e0.png"> <br>
+5、配置数据库文件路径，选择【默认路径】；<br>
+6、点击【下一步】，配置初始化参数，注意簇大小、页大小、字符集以及大小写敏感确定后不可修改，将页大小设为32；
+<img width="544" alt="image" src="https://user-images.githubusercontent.com/73985884/217983665-c9f671f2-b0d5-40de-a1cc-11e1fb2ddf5f.png"> <br>
+7、点击【下一步】，配置数据库口令：可设置登陆口令，默认口令与登录名一致；
+<img width="586" alt="image" src="https://user-images.githubusercontent.com/73985884/217984553-5afc727f-bf61-4730-9bf2-02c8fb9bfb6b.png"> <br>
+8、点击【下一步】，配置示例库：可以选择是否勾选创建示例库 BOOKSHOP 或 DMHR；<br>
+9、点击【下一步】，用户可检查创建参数，若有需要修改之处可点击【上一步】回到需要修改的位置进行修改；<br>
+10、点击【完成】，创建完成数据库实例后，重新打开一个终端，切换到 root 用户执行下图的脚本即可完成实例配置。
+<img width="379" alt="image" src="https://user-images.githubusercontent.com/73985884/217983935-84c7e870-2f84-42a5-9878-5fbc916b1586.png"> <br>
 
 #### 注册服务
+命令行注册服务:注册服务需使用 root 用户进行注册。使用 root 用户进入数据库安装目录的 /script/root 下进行注册：
+```shell
+cd /dm8/script/root
+./dm_service_installer.sh -t dmserver -dm_ini /home/dmdba/dmdbms/data/DAMENG/dm.ini -p DMSERVER
+```
 
+用户可根据自己的环境更改 dm.ini 文件的路径以及服务名。
+```shell
+./dm_service_installer.sh -h
+```
+
+如需为其他实例注册服务，需打开 dbca 工具，进行注册服务。
+```shell
+cd /home/dmdba/dmdbms/tool
+./dbca.sh
+```
+1、打开运行 dbca 工具，选择【注册数据库服务】；
+<img width="395" alt="image" src="https://user-images.githubusercontent.com/73985884/217985005-d68723f5-ae2e-43eb-9085-da0a970801e8.png"> <br>
+2、单击【开始】，弹出注册数据库服务页面；
+<img width="585" alt="image" src="https://user-images.githubusercontent.com/73985884/217985062-f2619f27-ef11-40c3-9af2-688d73d91592.png"> <br>
+3、点击【完成】后，弹出执行配置脚本页面，重新打开一个终端，切换到 root 用户执行执行脚本。脚本执行成功后，该实例已启动。
+<img width="384" alt="image" src="https://user-images.githubusercontent.com/73985884/217985228-6f3dba2c-f533-444d-b3c3-9fff407ced2a.png"> <br>
 
 #### 启停数据库
 
